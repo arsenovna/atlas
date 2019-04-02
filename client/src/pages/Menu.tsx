@@ -38,7 +38,7 @@ export default class Menu extends Component {
     return (
       <>
         <div />
-        <Drawer open={true} className="drw">
+        <Drawer open={true} className="drawer">
           <List className="list">
             <div className="atlas">
               <p>ATLAS</p>
@@ -54,7 +54,9 @@ export default class Menu extends Component {
             ))}
           </List>
         </Drawer>
-        <main className="right" />
+        <main className="main">
+          <div className="right" />
+        </main>
       </>
     );
   }

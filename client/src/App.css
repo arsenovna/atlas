@@ -31,28 +31,3 @@
     transform: rotate(360deg);
   }
 }
-
-.atlas p {
-  margin-bottom: 20px;
-  margin-top: 20px;
-  text-align: center;
-  font-size: 16px;
-  font-weight: bold;
-  font-family: "Muli", sans-serif;
-  color: #787878;
-}
-
-.list {
-  width: 210px;
-  height: 100%;
-  background: linear-gradient(
-      rgba(255, 255, 255, 0.94),
-      rgba(255, 255, 255, 0.94)
-    ),
-    url("./images/pad.jpg");
-}
-
-.list-item {
-  margin-left: 10px;
-  margin-top: 15px;
-}
