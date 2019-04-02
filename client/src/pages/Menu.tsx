@@ -10,9 +10,15 @@ import ShoppingCart from "@material-ui/icons/ShoppingCart";
 import SupervisorAccount from "@material-ui/icons/SupervisorAccount";
 import AttachMoney from "@material-ui/icons/AttachMoney";
 import Divider from "@material-ui/core/Divider";
+import "./style.css";
 
 export default class Menu extends Component {
+  state = {
+    menuIsOpen: true
+  };
+
   render() {
+    let { menuIsOpen } = this.state;
     let menuItems = [
       {
         label: "Dashboard",
@@ -35,29 +41,26 @@ export default class Menu extends Component {
         icon: <AttachMoney />
       }
     ];
+
     return (
-      <>
-        <div />
-        <Drawer open={true} className="drawer">
-          <List className="list">
-            <div className="atlas">
-              <p>ATLAS</p>
-            </div>
-            <Divider />
-            {menuItems.map((item, index) => (
-              <div className="list-item">
-                <ListItem button={true} key={index}>
-                  <ListItemIcon>{item.icon}</ListItemIcon>
-                  <ListItemText primary={item.label} />
-                </ListItem>
+      <div onClick={() => this.setState({menuIsOpen: !menuIsOpen})} className="menu">
+          <Drawer className={menuIsOpen ? "menu-drawer open" : "menu-drawer closed"} variant="permanent" open={menuIsOpen}>
+            <List className="list">
+              <div className="atlas">
+                <p>ATLAS</p>
               </div>
-            ))}
-          </List>
-        </Drawer>
-        <main className="main">
-          <div className="right" />
-        </main>
-      </>
+              <Divider />
+              {menuItems.map((item, index) => (
+                <div className="list-item">
+                  <ListItem className="customlist" button={true} key={index}>
+                    <ListItemIcon>{item.icon}</ListItemIcon>
+                    <ListItemText primary={item.label} />
+                  </ListItem>
+                </div>
+              ))}
+            </List>
+          </Drawer>
+      </div>
     );
   }
 }
