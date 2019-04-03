@@ -4,8 +4,12 @@
   display: flex;
   flex-direction: column;
   width: 55%;
-  /* margin: 0 auto; */
-  padding: 20px 30px 60px;
+  background: #ffffff73;
+  box-shadow: 0 0 5px 1px #0000004d;
+  border: 0;
+  border-radius: 4px;
+  max-width: 400px;
+  padding: 50px;
 }
 
 .sign-form label:not(:first-child) {
@@ -23,6 +27,12 @@
   border: 1px solid #c2c2c2;
   font-family: Lato, sans-serif;
   background-color: white;
+  font-size: 13px;
+  margin-top: 5px;
+  background: #ffffff2e;
+  box-shadow: 0 0 4px 1px #0000001c;
+  border: 0;
+  border-radius: 4px;
 }
 
 .login-form {
@@ -41,4 +51,15 @@
 
 .or {
   margin: 0 10px 0 10px;
+}
+
+.login-page {
+  background: url(https://hdqwalls.com/wallpapers/blue-blur.jpg);
+  height: 100vh;
+  display: flex;
+  align-items: center;
+}
+
+.login-form form > div {
+  margin: 20px 0;
 }

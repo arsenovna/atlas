@@ -7,22 +7,22 @@ import "./style.css";
 export default class Login extends Component {
   render() {
     return (
-      <div className="login-form">
-        <form>
-          <InputLabel>Email</InputLabel>
-          <Input fullWidth={true} />
-          <InputLabel>Password</InputLabel>
-          <Input fullWidth={true} />
-          <div className="btns">
-            <Button size="small" variant="outlined">
-              Save
+      <div className="login-page">
+        <div className="login-form">
+          <form>
+            <Input  placeholder="Email"  fullWidth={true} />
+            <Input placeholder="Password" fullWidth={true} />
+            <div className="btns">
+              <Button color="primary" size="small" variant="outlined">
+                Save
             </Button>
-            <span className="or">or</span>
-            <Button size="small" variant="outlined">
-              Sign Up
+              <span className="or">or</span>
+              <Button color="primary" size="small" variant="raised">
+                Sign Up
             </Button>
-          </div>
-        </form>
+            </div>
+          </form>
+        </div>
       </div>
     );
   }

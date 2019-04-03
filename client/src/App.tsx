@@ -14,7 +14,7 @@ export default class App extends Component {
     return (
       <div className="App">
         <div className="main-container">
-          {token && <Menu />}
+          {!token && <Menu />}
           <div className="content">
             <Router history={history}/>
           </div>

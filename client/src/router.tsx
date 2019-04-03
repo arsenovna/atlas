@@ -17,7 +17,26 @@ interface Props {
   history: History;
 }
 
+interface Adress {
+  street: string,
+  city: string,
+  country: string,
+}
+
+interface Human {
+  age: number,
+  name: string,
+  surname: string,
+  address?: Adress,
+  phoneNumber?: number,
+}
+
+// people: Human[]  --- people ia an array of objects as Human interface
+
 const AppRoutes = ({ history }: Props) => {
+  function countHuman(people: any) {
+    people.map((i:Human) => i)
+  }
   return (
     <>
       <Router history={history}>
