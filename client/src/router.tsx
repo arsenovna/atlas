@@ -14,7 +14,7 @@ import { History } from 'history';
 let token = window.localStorage.getItem("authentication_token");
 
 interface Props {
-  history: any;
+  history: History;
 }
 
 const AppRoutes = ({ history }: Props) => {
@@ -22,9 +22,6 @@ const AppRoutes = ({ history }: Props) => {
     <>
       <Router history={history}>
         <Switch>
-          <Route path="/login" component={Login} />
-          <Route path="/signup" exact component={SignUp} />
-          <Route path="/dashboard" exact component={Dashboard} />
           <Route
             exact
             path="/"
@@ -32,6 +29,10 @@ const AppRoutes = ({ history }: Props) => {
               token ? <Redirect to="/dashboard" /> : <Redirect to="/login" />
             }
           />
+          <Route path="/login" component={Login} />
+          <Route path="/signup" exact component={SignUp} />
+          <Route path="/dashboard" exact component={Dashboard} />
+
         </Switch>
       </Router>
     </>

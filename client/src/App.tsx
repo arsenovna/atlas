@@ -5,7 +5,7 @@ import Router from "./router";
 
 import { createBrowserHistory } from 'history';
 
-export const history = createBrowserHistory()
+export const history = createBrowserHistory();
 
 let token = window.localStorage.getItem("authentication_token");
 
