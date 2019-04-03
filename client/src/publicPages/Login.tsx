@@ -2,16 +2,17 @@ import React, { Component } from "react";
 import Input from "@material-ui/core/Input";
 import InputLabel from "@material-ui/core/InputLabel";
 import Button from "@material-ui/core/Button";
+import "./style.css";
 
 export default class Login extends Component {
   render() {
     return (
-      <div className="form">
+      <div className="login-form">
         <form>
-          <label>Email</label>
-          <Input fullWidth={true} margin="dense" />
-          <label>Password</label>
-          <Input fullWidth={true} margin="dense" />
+          <InputLabel>Email</InputLabel>
+          <Input fullWidth={true} />
+          <InputLabel>Password</InputLabel>
+          <Input fullWidth={true} />
           <div className="btns">
             <Button size="small" variant="outlined">
               Save

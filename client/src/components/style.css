@@ -1,0 +1,46 @@
+.menu .menu-drawer > div {
+  position: initial !important;
+  flex: 1;
+}
+.menu-drawer {
+  display: flex;
+  overflow: hidden;
+  transition: 300ms;
+  width: 200px;
+}
+
+.list-item > div {
+  height: 46px;
+}
+
+.menu > .open {
+  width: 200px;
+}
+
+.menu > .closed {
+  width: 70px;
+}
+
+.list {
+  height: 100%;
+  background: linear-gradient(
+      rgba(255, 255, 255, 0.94),
+      rgba(255, 255, 255, 0.94)
+    ),
+    url("../images/pad.jpg");
+}
+
+.list-item {
+  margin-left: 10px;
+  margin-top: 15px;
+}
+
+.atlas p {
+  margin-bottom: 20px;
+  margin-top: 20px;
+  text-align: center;
+  font-size: 16px;
+  font-weight: bold;
+  font-family: "Muli", sans-serif;
+  color: #787878;
+}

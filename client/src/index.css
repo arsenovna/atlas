@@ -13,74 +13,9 @@ code {
     monospace;
 }
 
-.form {
-  margin: 20px auto;
-  width: 360px;
-  padding: 20px;
-  border: 1px solid #c2c2c2;
-  font-family: Lato, sans-serif;
-  background-color: white;
-}
-
-.atlas p {
-  margin-bottom: 20px;
-  margin-top: 20px;
-  text-align: center;
-  font-size: 16px;
-  font-weight: bold;
-  font-family: "Muli", sans-serif;
-  color: #787878;
-}
-
-.drawer {
-  width: 210px;
-}
-
-.list {
-  /* width: 210px; */
-  height: 100%;
-  background: linear-gradient(
-      rgba(255, 255, 255, 0.94),
-      rgba(255, 255, 255, 0.94)
-    ),
-    url("./images/pad.jpg");
-}
-
-.list-item {
-  margin-left: 10px;
-  margin-top: 15px;
-}
-
-.main {
+/* .main {
   flex-grow: 1;
   /* background-color: red; */
-  background-color: white;
-  padding: 100px;
-}
-
-.form label {
-  display: inline-block;
-  width: 100%;
-  text-align: left;
-  margin-bottom: 10px;
-}
-
-.form input {
-  /* display: inline-block; */
-  width: 100%;
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  box-sizing: border-box;
-  height: 42px;
-  font-size: 13px;
-  line-height: 1.42857143;
-  padding: 2px 12px;
-  margin-bottom: 30px;
-}
-
-.btns {
-  text-align: left;
-}
-.or {
-  margin: 0 10px 0 10px;
-}
+/* background-color: white; */
+/* padding: 10s0px; */
+/* }  */

@@ -43,23 +43,30 @@ export default class Menu extends Component {
     ];
 
     return (
-      <div onClick={() => this.setState({menuIsOpen: !menuIsOpen})} className="menu">
-          <Drawer className={menuIsOpen ? "menu-drawer open" : "menu-drawer closed"} variant="permanent" open={menuIsOpen}>
-            <List className="list">
-              <div className="atlas">
-                <p>ATLAS</p>
+      <div
+        onClick={() => this.setState({ menuIsOpen: !menuIsOpen })}
+        className="menu"
+      >
+        <Drawer
+          className={menuIsOpen ? "menu-drawer open" : "menu-drawer closed"}
+          variant="permanent"
+          open={menuIsOpen}
+        >
+          <List className="list">
+            <div className="atlas">
+              <p>ATLAS</p>
+            </div>
+            <Divider />
+            {menuItems.map((item, index) => (
+              <div className="list-item">
+                <ListItem className="customlist" button={true} key={index}>
+                  <ListItemIcon>{item.icon}</ListItemIcon>
+                  <ListItemText primary={item.label} />
+                </ListItem>
               </div>
-              <Divider />
-              {menuItems.map((item, index) => (
-                <div className="list-item">
-                  <ListItem className="customlist" button={true} key={index}>
-                    <ListItemIcon>{item.icon}</ListItemIcon>
-                    <ListItemText primary={item.label} />
-                  </ListItem>
-                </div>
-              ))}
-            </List>
-          </Drawer>
+            ))}
+          </List>
+        </Drawer>
       </div>
     );
   }
