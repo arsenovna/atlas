@@ -1,12 +1,14 @@
 .menu .menu-drawer > div {
   position: initial !important;
   flex: 1;
+  overflow: hidden;
 }
 .menu-drawer {
   display: flex;
   overflow: hidden;
   transition: 300ms;
   width: 200px;
+  height: 100vh;
 }
 
 .list-item > div {

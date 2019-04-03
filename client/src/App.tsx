@@ -1,26 +1,25 @@
 import React, { Component } from "react";
 import "./App.css";
-// import Menu from "./pages/Menu";
-// import Login from "./publicPages/Login";
-// import SignUp from "./publicPages/SignUp";
+import Menu from "./components/Menu";
 import Router from "./router";
 
-class App extends Component {
+import { createBrowserHistory } from 'history';
+
+export const history = createBrowserHistory()
+
+let token = window.localStorage.getItem("authentication_token");
+
+export default class App extends Component {
   render() {
     return (
       <div className="App">
         <div className="main-container">
-          {/* <Menu /> */}
-          {/* <Login /> */}
-          {/* <SignUp /> */}
-          <Router />
+          {token && <Menu />}
           <div className="content">
-            <h2>Content HERE</h2>
+            <Router history={history}/>
           </div>
         </div>
       </div>
     );
   }
 }
-
-export default App;

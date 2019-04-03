@@ -1,3 +1,7 @@
+
 .main-container {
   display: flex;
+}
+.main-container .content {
+  flex-basis: 100%;
 }
