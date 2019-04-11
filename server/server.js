@@ -27,17 +27,18 @@ mongoose
 const db = mongoose.connection;
 
 console.log("Connected to database");
-const randomId = uuid(); //generates random id
-app.use(
-  session({
-    secretKey: "Bearer",
-    resave: false,
-    saveUninitialized: true,
-    generateId: () => randomId,
-    store: new FileStore()
-  })
-);
+// const randomId = uuid(); //generates random id
+// app.use(
+//   session({
+//     secretKey: "Bearer",
+//     resave: false,
+//     saveUninitialized: true,
+//     generateId: () => randomId,
+//     store: new FileStore()
+//   })
+// );
 app.get("/", (req, res) => res.json({ message: "Welcome!" }));
 app.get("/login", (req, res) => res.json({ message: "Login is requested" }));
 require("./app/routes/product")(app);
+require("./app/routes/authentication")(app);
 app.listen(port, () => console.log(`Server is running on port: ${port}`));

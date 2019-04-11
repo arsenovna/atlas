@@ -1,4 +1,4 @@
-//router for signin and signup authorization
+//router for signin and signup authorizations
 module.exports = app => {
   const authController = require("../controllers/AuthController");
 
@@ -6,7 +6,7 @@ module.exports = app => {
   app.post("/login", authController.login);
 
   //Logout
-  app.get("/logout", authController.logout);
+  // app.get("/logout", authController.logout);
 
   //Sign up
   app.post("/signup", authController.signup);
