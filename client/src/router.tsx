@@ -26,6 +26,8 @@ interface Human {
   phoneNumber?: number;
 }
 
+
+
 // people: Human[]  --- people ia an array of objects as Human interface
 
 const AppRoutes = ({ history }: Props) => {
@@ -33,23 +35,25 @@ const AppRoutes = ({ history }: Props) => {
     people.map((i: Human) => i);
   }
   return (
-    <>
+    <main className="page_wrapper">
       {token && <Menu />}
-      <Router history={history}>
-        <Switch>
-          <Route
-            exact
-            path="/"
-            render={() =>
-              token ? <Redirect to="/dashboard" /> : <Redirect to="/login" />
-            }
-          />
-          <Route path="/login" component={Login} />
-          <Route path="/signup" component={SignUp} />
-          <Route path="/dashboard" component={Dashboard} />
-        </Switch>
-      </Router>
-    </>
+      <div className="main-container">
+        <Router history={history}>
+          <Switch>
+            <Route
+              exact
+              path="/"
+              render={() =>
+                token ? <Redirect to="/dashboard" /> : <Redirect to="/login" />
+              }
+            />
+            <Route path="/login" component={Login} />
+            <Route path="/signup" component={SignUp} />
+            <Route path="/dashboard" component={Dashboard} />
+          </Switch>
+        </Router>
+      </div>
+    </main>
   );
 };
 export default AppRoutes;

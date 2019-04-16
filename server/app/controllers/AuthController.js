@@ -6,7 +6,6 @@ const config = require("../../config/session.config");
 //Controller handles login authorization
 exports.login = async (req, res) => {
   console.log("request", await req.body);
-  console.log("req", await req);
   try {
     let user = await User.findOne({ email: req.body.email });
     if (!user) return new Error("Email is not found");

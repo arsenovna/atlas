@@ -5,3 +5,9 @@
 .main-container .content {
   flex-basis: 100%;
 }
+main.page_wrapper .main-container {
+  margin-left: 20px;
+}
+main.page_wrapper {
+  display: flex;
+}
