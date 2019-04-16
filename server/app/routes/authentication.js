@@ -9,5 +9,5 @@ module.exports = app => {
   // app.get("/logout", authController.logout);
 
   //Sign up
-  app.post("/signup", authController.signup);
+  app.post("/signup", authController.signUp);
 };

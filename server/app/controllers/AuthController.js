@@ -1,16 +1,37 @@
 const User = require("../models/User");
+const bcrypt = require("bcrypt");
+const jwt = require("jsonwebtoken");
+const config = require("../../config/session.config");
 
 //Controller handles login authorization
 exports.login = async (req, res) => {
-  await User.authenticate(req.body.email, req.body.password, (error, user) => {
-    if (error || !user) {
-      let err = new Error("Email or password is incorrect");
-      err.status = 401;
-      return err;
-    }
-    req.session.userId = user._id;
-    return res;
-  });
+  console.log("request", await req.body);
+  console.log("req", await req);
+  try {
+    let user = await User.findOne({ email: req.body.email });
+    if (!user) return new Error("Email is not found");
+    let isPasswordCorrect = bcrypt.compareSync(
+      req.body.password,
+      user.password
+    );
+    if (!isPasswordCorrect) return new Error("Incorrect password");
+    let token = jwt.sign({ username: user.email }, config.secret, {
+      expiresIn: "24h"
+    });
+    // return the JWT token for the future API calls
+
+    res.json({
+      success: true,
+      currentUser: {
+        email: user.email
+      },
+      message: "Authentication successful!",
+      token: token
+    });
+  } catch (error) {
+    console.log(error);
+    return res.status(500).send(error);
+  }
 };
 
 //Controller handles signup authorization
@@ -23,14 +44,22 @@ exports.signUp = async (req, res) => {
 
   const user = new User({
     email: req.body.email,
-    password: req.body.password,
+    password: bcrypt.hashSync(req.body.password, 8),
     phoneNumber: req.body.phoneNumber
   });
   user
     .save()
     .then(data => {
-      res.send(data);
+      let token = jwt.sign({ username: user.email }, config.secret, {
+        expiresIn: "24h"
+      });
+      // return the JWT token for the future API calls
+      res.json({
+        success: true,
+        currentUser: user.email,
+        message: "Authentication successful!",
+        token: token
+      });
     })
     .catch(error => res.status(500).send(error));
-  console.log(req);
 };

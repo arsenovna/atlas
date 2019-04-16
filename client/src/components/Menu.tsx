@@ -9,12 +9,18 @@ import PermIdentity from "@material-ui/icons/PermIdentity";
 import ShoppingCart from "@material-ui/icons/ShoppingCart";
 import SupervisorAccount from "@material-ui/icons/SupervisorAccount";
 import AttachMoney from "@material-ui/icons/AttachMoney";
+import Label from "@material-ui/icons/Label";
 import Divider from "@material-ui/core/Divider";
 import "./style.css";
 
 export default class Menu extends Component {
   state = {
     menuIsOpen: true
+  };
+
+  logOut = () => {
+    window.localStorage.removeItem("token");
+    window.location.href = "http://localhost:3001/login";
   };
 
   render() {
@@ -39,6 +45,10 @@ export default class Menu extends Component {
       {
         label: "Reports",
         icon: <AttachMoney />
+      },
+      {
+        label: "Logout",
+        icon: <Label onClick={() => this.logOut()} />
       }
     ];
 
