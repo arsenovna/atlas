@@ -34,6 +34,7 @@ const AppRoutes = ({ history }: Props) => {
   }
   return (
     <>
+      {token && <Menu />}
       <Router history={history}>
         <Switch>
           <Route
@@ -43,10 +44,9 @@ const AppRoutes = ({ history }: Props) => {
               token ? <Redirect to="/dashboard" /> : <Redirect to="/login" />
             }
           />
-          {token && <Menu />}
           <Route path="/login" component={Login} />
-          <Route path="/signup" exact component={SignUp} />
-          <Route path="/dashboard" exact component={Dashboard} />
+          <Route path="/signup" component={SignUp} />
+          <Route path="/dashboard" component={Dashboard} />
         </Switch>
       </Router>
     </>
