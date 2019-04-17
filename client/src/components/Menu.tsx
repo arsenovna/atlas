@@ -12,6 +12,7 @@ import AttachMoney from "@material-ui/icons/AttachMoney";
 import Label from "@material-ui/icons/Label";
 import Divider from "@material-ui/core/Divider";
 import "./style.css";
+import { Link } from "react-router-dom";
 
 export default class Menu extends Component {
   state = {
@@ -28,27 +29,33 @@ export default class Menu extends Component {
     let menuItems = [
       {
         label: "Dashboard",
-        icon: <Dashboard />
+        icon: <Dashboard />,
+        link: "/dashboard"
       },
       {
         label: "User Profile",
-        icon: <PermIdentity />
+        icon: <PermIdentity />,
+        link: "/profile"
       },
       {
         label: "Products",
-        icon: <ShoppingCart />
+        icon: <ShoppingCart />,
+        link: "/products"
       },
       {
         label: "Agents",
-        icon: <SupervisorAccount />
+        icon: <SupervisorAccount />,
+        link: "/agents"
       },
       {
         label: "Reports",
-        icon: <AttachMoney />
+        icon: <AttachMoney />,
+        link: "/reports"
       },
       {
         label: "Logout",
-        icon: <Label onClick={() => this.logOut()} />
+        icon: <Label onClick={() => this.logOut()} />,
+        link: "#"
       }
     ];
 
@@ -68,11 +75,13 @@ export default class Menu extends Component {
             </div>
             <Divider />
             {menuItems.map((item, index) => (
-              <div className="list-item">
-                <ListItem className="customlist" button={true} key={index}>
-                  <ListItemIcon>{item.icon}</ListItemIcon>
-                  <ListItemText primary={item.label} />
-                </ListItem>
+              <div className="list-item" key={index}>
+                <Link to={item.link}>
+                  <ListItem className="customlist" button={true}>
+                    <ListItemIcon>{item.icon}</ListItemIcon>
+                    <ListItemText primary={item.label} />
+                  </ListItem>
+                </Link>
               </div>
             ))}
           </List>

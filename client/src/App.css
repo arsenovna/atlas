@@ -1,6 +1,7 @@
-
 .main-container {
   display: flex;
+  /* background: red; */
+  width: 100%;
 }
 .main-container .content {
   flex-basis: 100%;
