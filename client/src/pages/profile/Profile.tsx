@@ -6,7 +6,7 @@ export default class Profile extends Component {
     return (
       <div className="card">
         <p>Profile</p>
-        <Card />
+        <Card style={{padding: 50}} square={false}>asas</Card>
       </div>
     );
   }
