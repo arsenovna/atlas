@@ -30,9 +30,13 @@ exports.createUser = (req, res) => {
 
 exports.findAllUsers = async (req, res) => {
   try {
-    let all = await User.find().where(deleted, false);
-    res.send(all);
+    let all = await User.find();
+    res.json({
+      success: true,
+      users: all,
+    });
   } catch (error) {
+    console.log(error)
     res.status(500).send(error);
   }
 };

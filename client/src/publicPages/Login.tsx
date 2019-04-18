@@ -21,7 +21,7 @@ export default class Login extends Component<any, any> {
       password: "kkk888kkk"
     };
     let response = await login.signIn(data);
-    window.localStorage.setItem("token", response.currentUser.token);
+    window.localStorage.setItem("token", response.token);
     window.location.href = "http://localhost:3001/dashboard";
   };
 

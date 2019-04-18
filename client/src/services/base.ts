@@ -3,17 +3,24 @@ import User from "../Interfaces/User";
 export default class Base {
   // constructor(){}
 
-  getCurrentSession = () => window.localStorage.getItem("authentication_token");
+  getCurrentSession = () => window.localStorage.getItem("token");
 
   getJson = async (url: RequestInfo) => {
     try {
+      console.log('session', this.getCurrentSession())
       const response = await fetch(url, {
+        mode: "cors",
+        cache: "no-cache",
+        credentials: "same-origin",
+        redirect: "follow",
+        referrer: "no-referrer",
         headers: {
-          Authorization: `Token token=${this.getCurrentSession()}`,
+          Authorization: `Bearer ${this.getCurrentSession()}`,
           "Content-type": "application/json"
         }
       });
-      return response.json();
+      console.log('res: ', await response.json())
+      return await response.json();
     } catch (error) {
       return error;
     }

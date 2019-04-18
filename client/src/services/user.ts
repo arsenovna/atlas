@@ -4,5 +4,5 @@ import { getAllUsersAPI } from "./API/index";
 const baseService = new Base();
 
 export class UserService {
-  getUsers = () => baseService.getJson(getAllUsersAPI);
+  getUsers =  () => baseService.getJson(getAllUsersAPI);
 }

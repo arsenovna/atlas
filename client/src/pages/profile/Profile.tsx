@@ -1,4 +1,4 @@
-import React, { useState, FunctionComponent } from "react";
+import React, { useState, FunctionComponent, useEffect, EffectCallback} from "react";
 import Card from "@material-ui/core/Card";
 import TextField from "@material-ui/core/TextField";
 import Button from "@material-ui/core/Button";
@@ -14,8 +14,8 @@ import "./style.css";
 const userService = new UserService();
 
 const Profile: FunctionComponent<{}> = () => {
-  const [users, setUsers] = useState(userService.getUsers);
-  console.log(users);
+  const [users, setUsers] = useState(userService.getUsers());
+  console.log('users', users);
   return (
     <>
       <div className="card">
