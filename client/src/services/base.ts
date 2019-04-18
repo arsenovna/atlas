@@ -1,26 +1,25 @@
-import Request from "request";
+import User from "../Interfaces/User";
+
 export default class Base {
   // constructor(){}
 
   getCurrentSession = () => window.localStorage.getItem("authentication_token");
 
-  getJson = async (url:String) => {
+  getJson = async (url: RequestInfo) => {
     try {
-      let request = await fetch((url:Request), {
-        method: "GET",
+      const response = await fetch(url, {
         headers: {
           Authorization: `Token token=${this.getCurrentSession()}`,
           "Content-type": "application/json"
         }
       });
-      let response = await request.json();
-      return response;
+      return response.json();
     } catch (error) {
       return error;
     }
   };
 
-  putJson = async (url, data) => {
+  putJson = async (url: RequestInfo, data: any) => {
     try {
       let response = await fetch(url, {
         method: "PUT",
@@ -40,7 +39,7 @@ export default class Base {
     }
   };
 
-  postJson = async (url, data) => {
+  postJson = async (url: RequestInfo, data:any) => {
     try {
       let response = await fetch(url, {
         method: "POST",
