@@ -2,11 +2,17 @@ const mongoose = require("mongoose");
 const bcrypt = require("bcrypt");
 const UserScheme = mongoose.Schema(
   {
-    name: {
+    firstName: {
       type: String,
-      unique: false, //email must be unique
-      required: false, //email is required
-      trim: false //remove whitespace
+      unique: false,
+      required: false,
+      trim: false
+    },
+    lastName: {
+      type: String,
+      unique: false,
+      required: false,
+      trim: false
     },
     email: {
       type: String,
@@ -20,13 +26,17 @@ const UserScheme = mongoose.Schema(
     },
     password: {
       type: String,
-      unique: false, //email must be unique
-      required: true, //email is required
-      trim: true //remove whitespace
+      unique: false,
+      required: true,
+      trim: true
     },
     address: String,
     dob: Date,
-    role: String
+    role: String,
+    salary: Number,
+    gender: String,
+    startDate: Date,
+    deleted: Boolean
   },
   {
     timestamps: true

@@ -1,11 +1,12 @@
+import Request from "request";
 export default class Base {
   // constructor(){}
 
   getCurrentSession = () => window.localStorage.getItem("authentication_token");
 
-  getJson = async url => {
+  getJson = async (url:String) => {
     try {
-      let request = await fetch(url, {
+      let request = await fetch((url:Request), {
         method: "GET",
         headers: {
           Authorization: `Token token=${this.getCurrentSession()}`,

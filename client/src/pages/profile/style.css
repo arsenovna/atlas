@@ -1,11 +1,32 @@
-/* .card {
-  width: 100px;
-  border: 1px solid black;
-  margin: 0 auto;
-} */
+.left {
+  width: 70%;
+  margin-right: 20px;
+}
+.right {
+  width: 35%;
+}
+.card {
+  width: 95%;
+  display: flex;
+  margin: 0px auto;
+}
 
-div {
-  width: 100px;
-  border: 1px solid black;
-  margin: 0 auto;
+.left-card {
+  padding: 50px;
+}
+
+.right-card {
+  padding: 50px;
+}
+form div {
+  margin-right: 20px;
+}
+
+.btn {
+  margin-top: 10px;
+}
+p {
+  color: #787878;
+  font-size: 18px;
+  font-weight: 400;
 }
