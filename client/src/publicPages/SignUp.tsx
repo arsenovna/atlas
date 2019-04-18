@@ -3,13 +3,14 @@ import Button from "@material-ui/core/Button";
 import TextField from "@material-ui/core/TextField";
 import "./style.css";
 import { AuthService } from "../services/authorization";
+import User from "../Interfaces/User";
 
 const signUp = new AuthService();
 export default class SignUp extends Component {
   state = {
     email: "",
     password: "",
-    phoneNumber: ""
+    phoneNumber: 0
   };
   handleChange = (event: any, field: any) => {
     this.setState({ [field]: event.target.value });
