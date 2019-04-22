@@ -5,6 +5,7 @@ import SignUp from "./publicPages/SignUp";
 import Menu from "./components/Menu";
 import Dashboard from "./pages/dashboard/Dashboard";
 import Profile from "./pages/profile/Profile";
+import CreateProfile from "./pages/profile/CreateProfile";
 import Products from "./pages/products/Products";
 import Agents from "./pages/agents/Agents";
 import Reports from "./pages/reports/FinReports";
@@ -60,6 +61,7 @@ const AppRoutes = ({ history }: Props) => {
               <Route path="/signup" component={SignUp} />
               <Route path="/dashboard" component={Dashboard} />
               <Route path="/profile" component={Profile} />
+              <Route path="/createProfile" component={CreateProfile} />
               <Route path="/products" component={Products} />
               <Route path="/agents" component={Agents} />
               <Route path="/reports" component={FinReports} />

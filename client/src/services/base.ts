@@ -2,25 +2,19 @@ import User from "../Interfaces/User";
 
 export default class Base {
   // constructor(){}
-
   getCurrentSession = () => window.localStorage.getItem("token");
 
   getJson = async (url: RequestInfo) => {
     try {
-      console.log('session', this.getCurrentSession())
       const response = await fetch(url, {
-        mode: "cors",
-        cache: "no-cache",
-        credentials: "same-origin",
-        redirect: "follow",
-        referrer: "no-referrer",
+        method: "GET",
         headers: {
           Authorization: `Bearer ${this.getCurrentSession()}`,
           "Content-type": "application/json"
         }
       });
-      console.log('res: ', await response.json())
-      return await response.json();
+      let res = await response.json();
+      return res;
     } catch (error) {
       return error;
     }
@@ -46,7 +40,7 @@ export default class Base {
     }
   };
 
-  postJson = async (url: RequestInfo, data:any) => {
+  postJson = async (url: RequestInfo, data: any) => {
     try {
       let response = await fetch(url, {
         method: "POST",
