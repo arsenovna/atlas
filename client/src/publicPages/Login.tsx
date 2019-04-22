@@ -22,6 +22,7 @@ export default class Login extends Component<any, any> {
     };
     let response = await login.signIn(data);
     window.localStorage.setItem("token", response.token);
+    console.log(response)
     window.location.href = "http://localhost:3001/dashboard";
   };
 

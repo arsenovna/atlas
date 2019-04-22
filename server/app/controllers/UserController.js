@@ -31,6 +31,20 @@ exports.createUser = (req, res) => {
 exports.findAllUsers = async (req, res) => {
   try {
     let all = await User.find();
+    all = all.map(user => {
+     return {
+      email: user.email,
+      firstName: user.firstName,
+      lastName: user.lastName,
+      address: user.address,
+      dob: user.dob,
+      role: user.role,
+      phoneNumber: user.phoneNumber,
+      salary: user.salary,
+      gender: user.gender,
+      startDate: user.startDate,
+     };
+    })
     res.json({
       success: true,
       users: all,
