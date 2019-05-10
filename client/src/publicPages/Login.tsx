@@ -22,7 +22,7 @@ export default class Login extends Component<any, any> {
     };
     let response = await login.signIn(data);
     window.localStorage.setItem("token", response.token);
-    console.log(response)
+    console.log(response);
     window.location.href = "http://localhost:3001/dashboard";
   };
 
@@ -52,14 +52,14 @@ export default class Login extends Component<any, any> {
                 Login
               </Button>
               <span className="or">or</span>
-              <Button
+              {/* <Button
                 href="/signup"
                 color="primary"
                 size="small"
                 variant="contained"
               >
                 Sign Up
-              </Button>
+              </Button> */}
             </div>
           </form>
         </div>

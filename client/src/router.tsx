@@ -3,15 +3,15 @@ import { Router, Route, Switch, Redirect } from "react-router-dom";
 import Login from "./publicPages/Login";
 import SignUp from "./publicPages/SignUp";
 import Menu from "./components/Menu";
-import Dashboard from "./pages/dashboard/Dashboard";
-import Profile from "./pages/profile/Profile";
-import CreateProfile from "./pages/profile/CreateProfile";
-import Products from "./pages/products/Products";
-import Agents from "./pages/agents/Agents";
-import Reports from "./pages/reports/FinReports";
+import Dashboard from "./pages/management/dashboard/Dashboard";
+import Profile from "./pages/management/profile/Profile";
+import CreateProfile from "./pages/management/profile/CreateProfile";
+import Products from "./pages/management/products/Products";
+import Agents from "./pages/management/agents/Agents";
+import Reports from "./pages/management/reports/FinReports";
 
 import { History } from "history";
-import FinReports from "./pages/reports/FinReports";
+import FinReports from "./pages/management/reports/FinReports";
 
 let token = window.localStorage.getItem("token");
 
@@ -58,7 +58,7 @@ const AppRoutes = ({ history }: Props) => {
                 }
               />
               <Route path="/login" component={Login} />
-              <Route path="/signup" component={SignUp} />
+              <Route path="/atlas/admin/registration" component={SignUp} />
               <Route path="/dashboard" component={Dashboard} />
               <Route path="/profile" component={Profile} />
               <Route path="/createProfile" component={CreateProfile} />
